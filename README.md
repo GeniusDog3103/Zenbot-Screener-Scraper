@@ -1,6 +1,6 @@
 ![Zenbot logo](https://github.com/GeniusDog3103/Zenbot-Screener-Scraper/blob/main/zenbotlogo.png?raw=True)
 
-# Zenbot-Screener-Scraper
+# 🏗️ Zenbot-Screener-Scraper 
 
 **Scrape tickers from your own custom stock screener.**
 
@@ -10,6 +10,7 @@
 <ul>
   <li>url: url to your stock screener</li>
   <li>wait: time in sec to wait for program to load (default: 10)</li>
+  <li>tries: number of tries to load screener before quitting (default: 3)</li>
   <li>headless: boolean to decide whether to load browser on your screen. False to turn on.(default: True)</li>
 </ul>
 
