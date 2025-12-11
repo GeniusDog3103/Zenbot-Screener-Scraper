@@ -1,4 +1,5 @@
-![Zenbot logo]("https://github.com/GeniusDog3103/Zenbot-Screener-Scraper/blob/main/zenbot_logo.png?raw=True)
+![Zenbot logo]("https://github.com/GeniusDog3103/Zenbot-Screener-Scraper/blob/main/zenbotlogo.png?raw=True)
+
 # Zenbot-Screener-Scraper
 
 **Scrape tickers from your own custom stock screener.**
