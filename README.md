@@ -49,6 +49,9 @@ selenium:
 <h2>Credits</h2>
 
 All code written by GeniusDog3103.
+<h2>Maintenance</h2>
+
+Work in progress, will be updated.
 <h2>License</h2>
 
 💼 MIT License:
