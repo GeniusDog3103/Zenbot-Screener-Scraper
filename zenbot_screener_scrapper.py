@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
 from selenium.webdriver.chrome.options import Options
 
-def zen_data(url: str, time= 10, tries=3, headless= True):
+def auto_zen_data(url: str, time= 10, tries=3, headless= True):
     """
     Args:
       url: (str) url to screener
