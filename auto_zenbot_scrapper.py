@@ -5,13 +5,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
 from selenium.webdriver.chrome.options import Options
 
-def auto_zen_data(url: str, time= 10, tries=3, headless= True):
+def auto_zen_data(url: str, time= 10, tries=3, headless= True, warnings=True):
     """
     Args:
       url: (str) url to screener
       time: (int) time in sec to wait for scanner to load; default: 10
       tries: (int) number of tries for website to load before quitting; default: 3
-      headless: (bool) True to keep browser from popping up; default: True
+      headless: (bool) True to keep browser from popping up on your screen; default: True
+      warnings: (bool) whether you want print messages for updates once loaded website, copied tickers, etc.; default: True
     Output:
       tickers: (list) list of tickers found
     """
@@ -32,14 +33,19 @@ def auto_zen_data(url: str, time= 10, tries=3, headless= True):
 
             if type(table) == webdriver.remote.webelement.WebElement:
                 table_loaded_bool = True
-                #print("loaded")
+                if warnings == True:
+                    print("Loaded website")
         except exceptions.TimeoutException:
             tries-=1
             driver.quit()
-            #print("refreshed")
+            if warnings == True:
+                print("Retrying to load website")
     try:
        symbols = driver.find_elements(by=By.CSS_SELECTOR, value='div.grid-cell.age-column-container')
-       
+        
+        if warnings == True:
+            print("Found tickers table")
+            
        stocks_df = []
        for element in symbols:
            stocks_df.append(element.text)
@@ -49,5 +55,7 @@ def auto_zen_data(url: str, time= 10, tries=3, headless= True):
 
     finally:
         driver.quit()
+        if warnings == True:
+            print("Closed website, finished scrapping.")
     
     return stocks_df
