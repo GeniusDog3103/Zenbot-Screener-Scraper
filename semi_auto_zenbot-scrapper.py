@@ -5,13 +5,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
 from selenium.webdriver.chrome.options import Options
 
-def semi_auto_zen_data(url: str, time= 10, tries=3, headless= True, warnings=True):
+def semi_auto_zen_data(url: str, time= 10, tries=3, warnings=True):
   """
   Args:
     url: (str) url to zenbot scanner; check repo documentation for how to set up your own scanner
     time: (int) time in sec to wait for scanner to load; default: 10
     tries: (int) number of tries for website to load before quitting; default: 3
-    headless: (bool) True to keep browser from popping up on your screen; default: True
     warnings: (bool) whether you want print messages for updates once loaded website, copied tickers, etc.; default: True
   Output:
     tickers: (list) list of tickers found
@@ -27,8 +26,6 @@ def semi_auto_zen_data(url: str, time= 10, tries=3, headless= True, warnings=Tru
 
 
     options = Options()
-    if headless == True:
-        chrome_options.add_argument("--headless=new")
     options.add_argument(r"--user-data-dir=C:\Users\Intel\AppData\Local\Google\Chrome\User Data\Default")
     options.add_argument(r'--profile-directory=Default')
     options.add_argument("--disable-infobars")
