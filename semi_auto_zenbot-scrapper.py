@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
 from selenium.webdriver.chrome.options import Options
 
-def semi_auto_zen_data((url: str, time= 10, tries=3, headless= True, warnings=True):
+def semi_auto_zen_data(url: str, time= 10, tries=3, headless= True, warnings=True):
   """
   Args:
     url: (str) url to zenbot scanner; check repo documentation for how to set up your own scanner
